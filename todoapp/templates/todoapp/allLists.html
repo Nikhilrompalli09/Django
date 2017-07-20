@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All TODO List</title>
+</head>
+<style>
+    a{
+        text-decoration: none;
+        color:black;
+        font-size:25px;
+    }
+    a:hover
+  {
+    color:blue;
+    text-decoration:none;
+    cursor:pointer;
+   }
+</style>
+<body>
+
+<h1>Todo Lists</h1>
+<ol>
+    {% for list in lists %}
+    <li>
+        <a href="{% url 'itemsDetails' list.id%}">{{list}}</a>
+    </li>
+    {% endfor %}
+</ol>
+
+
+</body>
+</html>

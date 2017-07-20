@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lists And items</title>
+</head>
+<body>
+<ol>
+    {% for list in data %}
+    <li>
+        <p>{{list.todolist__name}}</p>
+        <ol>
+        {% for l in data %}
+            {% if list.todolist__name == l.todolist__name %}
+                <li>{{l.todolist__createdDate}}||{{l.description}}||{{l.status}}||{{l.dueByDate}}</li>
+            {% endif %}
+        {% endfor %}
+        </ol>
+    </li>
+    {% endfor %}
+
+</ol>
+
+</body>
+</html>
