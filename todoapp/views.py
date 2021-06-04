@@ -58,7 +58,7 @@ class UserTodoLists(CSRFExemptMixin,APIView):
 
      def get(self, request, format=None):                   #retrive all lists of a user using user id
         id=request.user.id
-        print id
+        print(id)
         list = todoList.objects.all().filter(user_id=id)
         serializer = ListSerializer(list, many=True)
         # request.method='GET'
@@ -67,8 +67,8 @@ class UserTodoLists(CSRFExemptMixin,APIView):
 
      def post(self, request, format=None):                  #create a new list
         item=request.data
-        print item
-        print request.user.id
+        print(item)
+        print(request.user.id)
         # item["user"]=request.user.id
         # print item
         list={}

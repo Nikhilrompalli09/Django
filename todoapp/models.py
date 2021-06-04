@@ -9,7 +9,7 @@ from django.db import models
 class todoList(models.Model):
     name = models.CharField(max_length=128)
     createdDate=models.DateField(null=True, blank=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.name
